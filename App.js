@@ -1,12 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import { Provider } from 'react-redux';
 
-import Homepage from './components/Homepage';
+import { configureStore } from './app/reduxStore';
+import Homepage from './app/components/Homepage';
+
+const store = configureStore();
 
 export default class App extends React.Component {
   render() {
     return (
-      <Homepage />
+      <Provider store={store}>
+        <Homepage />
+      </Provider>
     );
   }
 }
