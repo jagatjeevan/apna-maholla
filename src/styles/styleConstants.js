@@ -4,11 +4,13 @@ import { COLOR } from 'react-native-material-ui';
 const styleConstants = {
   bodyBackgroundColor: '#fff',
   fontSize: 18,
+  teal500: '#009688',
 };
 
 export const materialUITheme = {
   palette: {
-    primaryColor: COLOR.tealA700,
+    primaryColor: COLOR.teal500,
+    accentColor: COLOR.cyanA700,
   }
 }
 
