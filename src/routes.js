@@ -1,13 +1,15 @@
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator } from 'react-navigation';
 
-import Dashboard from "./components/Dashboard";
-import About from "./components/About";
+import About from './components/About';
+import Dashboard from './components/Dashboard';
+import SignIn from './components/SignIn';
 
 const Routes = createStackNavigator({
-  Dashboard: { screen: Dashboard },
   About: { screen: About },
+  Dashboard: { screen: Dashboard },
+  SignIn: { screen: SignIn },
 }, {
-  initialRouteName: 'Dashboard',
+  initialRouteName: 'SignIn',
   headerMode: 'none',
 });
 
