@@ -13,12 +13,18 @@ export default class SignIn extends Component {
     this.state = {
       username: '',
       password: '',
+      error: ''
     };
     this.signInUser = this.signInUser.bind(this);
   }
   
   signInUser() {
-    console.log(this.state);
+    const { username, password } = this.state;
+    if(username === 'admin' && password === 'admin') {
+      this.props.navigation.navigate('Dashboard');
+    } else {
+      this.setState({ error: 'Either username or password is wrong' });
+    }
   }
   
   render() {
@@ -30,14 +36,15 @@ export default class SignIn extends Component {
         </View>
         <KeyboardAvoidingView behavior="padding" enabled style={signinStyles.signInForm}>
           <Text style={styles.heading}>{textConstants.signIn}</Text>
+          <Text style={styles.error}>{this.state.error}</Text>
           <View style={styles.width100} id="signin-form">
             <TextInput
-              onChangeText={(text) => this.setState({ username: text })}
+              onChangeText={(text) => this.setState({ username: text, error: '' })}
               placeholder={textConstants.userNamePlaceholder}
               style={styles.textInput}
             />
             <TextInput
-              onChangeText={(text) => this.setState({ password: text })}
+              onChangeText={(text) => this.setState({ password: text, error: '' })}
               placeholder={textConstants.passwordPlaceholder}
               style={styles.textInput}
               secureTextEntry
