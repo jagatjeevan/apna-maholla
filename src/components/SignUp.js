@@ -5,15 +5,18 @@ import { Button } from 'react-native-material-ui';
 import styles from '../styles/style';
 import signUpStyles from '../styles/signUpStyles';
 import signinStyles from '../styles/signInStyles';
+import textConstants from '../utils/textConstants';
 
 export default class SignUp extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      vehicle: '',
+      block: '',
       company: '',
       flat: '',
+      name: '',
+      phone: '',
+      vehicle: '',
     };
     this.signUp = this.signUp.bind(this);
   }
@@ -32,29 +35,47 @@ export default class SignUp extends Component {
         <View style={signUpStyles.signUpForm}>
           <TextInput
             onChangeText={(text) => this.setState({ name: text })}
-            placeholder="Enter name"
+            placeholder={textConstants.namePlaceholder}
             style={styles.textInput}
           />
           <TextInput
-            onChangeText={(text) => this.setState({ vehicle: text })}
-            placeholder="Enter vehicle number"
+            onChangeText={(text) => this.setState({ phone: text })}
+            keyboardType="phone-pad"
+            placeholder={textConstants.phoneNumberPlaceholder}
             style={styles.textInput}
           />
           <TextInput
-            onChangeText={(text) => this.setState({ company: text })}
-            placeholder="Enter Company Details"
+            onChangeText={(text) => this.setState({ block: text })}
+            placeholder={textConstants.blockPlaceholder}
             style={styles.textInput}
           />
           <TextInput
             onChangeText={(text) => this.setState({ flat: text })}
-            placeholder="Enter Flat Details"
+            keyboardType="numeric"
+            placeholder={textConstants.flatPlaceholder}
             style={styles.textInput}
           />
-          <Button primary raised text="Sign Up" onPress={this.signUp}upperCase={false} />
+          <TextInput
+            onChangeText={(text) => this.setState({ email: text })}
+            keyboardType="email-address"
+            placeholder={textConstants.emailPlaceholder}
+            style={styles.textInput}
+          />
+          <TextInput
+            onChangeText={(text) => this.setState({ vehicle: text })}
+            placeholder={textConstants.vehiclePlaceholder}
+            style={styles.textInput}
+          />
+          <TextInput
+            onChangeText={(text) => this.setState({ company: text })}
+            placeholder={textConstants.companyPlaceholder}
+            style={styles.textInput}
+          />
+          <Button primary raised text={textConstants.signUp} onPress={this.signUp}upperCase={false} />
         </View>
         <View style={signinStyles.signInAuthenticationActions}>
           <Button
-            text="Sign In"
+            text={textConstants.signIn}
             onPress={() => this.props.navigation.navigate('SignIn')}
             upperCase={false}
           />

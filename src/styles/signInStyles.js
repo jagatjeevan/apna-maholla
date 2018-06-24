@@ -36,7 +36,6 @@ const signInStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 20,
-    width: 280,
   },
 });
 
