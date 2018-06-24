@@ -3,9 +3,6 @@ import { StyleSheet } from 'react-native';
 import styleConstants from './styleConstants';
 
 const signInStyles = StyleSheet.create({
-  signInContainer: {
-    flex: 1,
-  },
   signInBanner: {
     backgroundColor: styleConstants.teal500,
     flex: 1,
@@ -22,8 +19,8 @@ const signInStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 30,
-    paddingLeft: 50,
-    paddingRight: 50,
+    paddingLeft: styleConstants.padding,
+    paddingRight: styleConstants.padding,
   },
   signInButton: {
     display: 'flex',

@@ -3,6 +3,7 @@ export default textConstants= {
   forgotPassword: 'Forgot password',
   signIn: 'Sign In',
   signUp: 'Sign Up',
+  retrievePassword: 'Retrieve your password',
 
   // Placeholder
   namePlaceholder: 'Enter your name',

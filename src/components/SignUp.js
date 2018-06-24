@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Image, View, Text, TextInput } from 'react-native';
 import { Button } from 'react-native-material-ui';
 
+import textConstants from '../utils/textConstants';
+
 import styles from '../styles/style';
 import signUpStyles from '../styles/signUpStyles';
-import signinStyles from '../styles/signInStyles';
-import textConstants from '../utils/textConstants';
 
 export default class SignUp extends Component {
   constructor() {
@@ -28,9 +28,9 @@ export default class SignUp extends Component {
   render() {
     return (
       <View>
-        <View style={signUpStyles.signUpHeader}>
+        <View style={styles.headerBand}>
           <Image source={require('../img/apartment.png')} style={{height: 20}} />
-          <Text style={signUpStyles.tagline}>APNA MAHALLA</Text>
+          <Text style={styles.bold}>{textConstants.banner}</Text>
         </View>
         <View style={signUpStyles.signUpForm}>
           <TextInput
@@ -73,7 +73,7 @@ export default class SignUp extends Component {
           />
           <Button primary raised text={textConstants.signUp} onPress={this.signUp}upperCase={false} />
         </View>
-        <View style={signinStyles.signInAuthenticationActions}>
+        <View style={styles.topSpacer}>
           <Button
             text={textConstants.signIn}
             onPress={() => this.props.navigation.navigate('SignIn')}

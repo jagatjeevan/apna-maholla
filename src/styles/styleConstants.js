@@ -5,6 +5,7 @@ const styleConstants = {
   bodyBackgroundColor: '#fff',
   fontSize: 18,
   teal500: '#009688',
+  padding: 50,
 };
 
 export const materialUITheme = {

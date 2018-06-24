@@ -15,20 +15,15 @@ export default class SignIn extends Component {
       password: '',
     };
     this.signInUser = this.signInUser.bind(this);
-    this.forgotPassword = this.forgotPassword.bind(this);
   }
   
   signInUser() {
     console.log(this.state);
   }
   
-  forgotPassword() {
-    console.log('Proceed to forgot password');
-  }
-
   render() {
     return (
-      <View style={signinStyles.signInContainer}>
+      <View style={styles.flexContainer}>
         <View style={signinStyles.signInBanner}>
           <Text style={signinStyles.signInBannerText}>{textConstants.banner}</Text>
           <Image source={require('../img/apartment.png')} />
@@ -55,7 +50,7 @@ export default class SignIn extends Component {
                   onPress={() => this.props.navigation.navigate('SignUp')}
                   upperCase={false}
                 />
-                <Button text={textConstants.forgotPassword} onPress={this.forgotPassword} upperCase={false} />
+                <Button text={textConstants.forgotPassword} onPress={() => this.props.navigation.navigate('ForgotPassword')} upperCase={false} />
               </View>
             </View>
           </View>
