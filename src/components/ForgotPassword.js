@@ -36,7 +36,7 @@ export default class ForgotPassword extends Component {
         </View>
         <View style={styles.appBodyContainer}>
           <Button primary raised text={textConstants.retrievePassword} onPress={() => {}} upperCase={false} />
-          <Button text={textConstants.signIn} onPress={() => this.props.navigation.navigate('signIn')} upperCase={false} />
+          <Button text={textConstants.signIn} onPress={() => this.props.navigation.navigate('SignIn')} upperCase={false} />
         </View>
       </View>
     );
